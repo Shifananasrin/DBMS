@@ -1,0 +1,53 @@
+1.count the number of students in each departments
+students table
++-----------+------------+------+------+
+| studentid | name       | age  | dno  |
++-----------+------------+------+------+
+|       101 | Midhun K   |   35 |    1 |
+|       102 | Ann Mariya |   21 |    2 |
+|       103 | Sidharth M |   21 |    3 |
+|       104 | ram        |   25 |    1 |
+|       105 | riya       |   26 |    2 |
+|       106 | Aysha      |   24 | NULL |
+|       107 | Shana      |   30 |    2 |
+|       108 | Anaswara   |   27 |    3 |
+|       109 | devika     |   28 |    4 |
+|       110 | sana       |   33 |    5 |
++-----------+------------+------+------+
+select count(*) from students group by dno;
++----------+
+| count(*) |
++----------+
+|        1 |
+|        2 |
+|        3 |
+|        2 |
+|        1 |
+|        1 |
++----------+
+
+2. get total number of students
+select count(*)  as total_students from students;
++----------------+
+| total_students |
++----------------+
+|             10 |
++----------------+
+
+3. find the average price of  books
+select  avg(price) from books;
++------------+
+| avg(price) |
++------------+
+| 353.000000 |
++------------+
+
+4. find the most expensive and cheapest books
+select max(price) as expensive ,min(price) as cheapest from books;
++-----------+----------+
+| expensive | cheapest |
++-----------+----------+
+|    770.00 |   110.00 |
++-----------+----------+
+
+5. count the total  number of bookissued
