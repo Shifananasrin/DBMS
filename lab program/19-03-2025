@@ -1,0 +1,105 @@
+1. find the department  with more than 3 students
+
+select * from students;
+
++-----------+------------+------+------+
+| studentid | name       | age  | dno  |
++-----------+------------+------+------+
+|       101 | Midhun K   |   35 |    1 |
+|       102 | Ann Mariya |   21 |    2 |
+|       103 | Sidharth M |   21 |    3 |
+|       104 | ram        |   25 |    1 |
+|       105 | riya       |   26 |    2 |
+|       106 | Aysha      |   24 | NULL |
+|       107 | Shana      |   30 |    2 |
+|       108 | Anaswara   |   27 |    3 |
+|       109 | devika     |   28 |    4 |
+|       110 | sana       |   33 |    5 |
++-----------+------------+------+------+
+select dno,count(studentid) as total_no_students from students group by dno having count(studentid)>2;
++------+-------------------+
+| dno  | total_no_students |
++------+-------------------+
+|    2 |                 3 |
++------+-------------------+
+
+
+
+* group by
+Q) Count the number of students in each departments
+
+select dno,count(studentid) as total_no_students from students group by dno;
++------+-------------------+
+| dno  | total_no_students |
++------+-------------------+
+| NULL |                 1 |
+|    1 |                 2 |
+|    2 |                 3 |
+|    3 |                 2 |
+|    4 |                 1 |
+|    5 |                 1 |
++------+-------------------+
+Q)count  how many books each students has issued
+select bookid,count(studentid) from bookissues group by  bookid ;
++--------+------------------+
+| bookid | count(studentid) |
++--------+------------------+
+|      1 |                3 |
+|      2 |                3 |
+|      4 |                1 |
+|      6 |                2 |
+|      7 |                2 |
++--------+------------------+
+
+
+
+
+
+Q) find the average book price per author
+select author ,avg(price) from books group by author;
++---------------+------------+
+| author        | avg(price) |
++---------------+------------+
+| Ramez Elmasri | 475.000000 |
+| Silberschatz  | 770.000000 |
+| febin         | 337.500000 |
+| Cormen        | 110.000000 |
+| john          | 150.000000 |
+| vidhu         | 200.000000 |
++---------------+------------+
+
+Q)find the total number of books issued per deparments
+
+
+
+SELECT 
+    departments.dname, 
+    COUNT(books,bookid) AS total_books_issued
+FROM 
+    Departments d
+JOIN 
+    Students s ON d.department_id = s.department_id
+JOIN 
+    BookIssues bi ON s.student_id = bi.student_id
+GROUP BY 
+    d.department_name
+ORDER BY 
+    total_books_issued DESC;
+
+
+Q) find the number of book issued per day
+select  issues_date,count(bookid) from bookissues group by issues_date;
++-------------+---------------+
+| issues_date | count(bookid) |
++-------------+---------------+
+| 2024-12-09  |             1 |
+| 2024-11-21  |             1 |
+| 2025-01-11  |             2 |
+| 2025-02-14  |             1 |
+| 2025-02-10  |             1 |
+| 2025-02-12  |             1 |
+| 2025-01-05  |             1 |
+| 2025-01-15  |             1 |
+| 2025-01-20  |             1 |
+| 2025-01-28  |             1 |
++-------------+---------------+
