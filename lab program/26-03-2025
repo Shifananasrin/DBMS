@@ -19,3 +19,31 @@ select * from studentviews1;
 
 select * from departments join students on departments.dno=students.dno  join bookissues on students.studentid=bookissues.studentid  join books on bookissues.bookid=bookissues.bookid;
 
+create view library as (select * from departments natural join students natural  join bookissues natural join books);
+
+select * from library;
++--------+-----------+-----+-------+------------+------+-------------+-------------+------+---------------------------+---------------+--------+------------------+
+| bookid | studentid | dno | dname | name       | age  | issues_date | return_date | fine | title                     | author        | price  | publication_date |
++--------+-----------+-----+-------+------------+------+-------------+-------------+------+---------------------------+---------------+--------+------------------+
+|      1 |       101 |   1 | MCA   | Midhun K   |   35 | 2024-12-09  | 2024-12-10  | 0.00 | Database Systems          | Ramez Elmasri | 550.00 | 1976-10-10       |
+|      2 |       101 |   1 | MCA   | Midhun K   |   35 | 2024-11-21  | 2024-11-28  | 0.00 | Operating System Concepts | Silberschatz  | 770.00 | 1960-11-20       |
+|      4 |       102 |   2 | BCA   | Ann Mariya |   21 | 2025-01-11  | 2025-01-15  | 0.00 | Algorithms                | Cormen        | 110.00 | 2011-01-23       |
+|      1 |       103 |   3 | MBA   | Sidharth M |   21 | 2025-01-11  | 2025-01-16  | 0.00 | Database Systems          | Ramez Elmasri | 550.00 | 1976-10-10       |
+|      2 |       103 |   3 | MBA   | Sidharth M |   21 | 2025-02-14  | 2025-02-18  | 0.00 | Operating System Concepts | Silberschatz  | 770.00 | 1960-11-20       |
+|      2 |       101 |   1 | MCA   | Midhun K   |   35 | 2025-02-10  | NULL        | 0.00 | Operating System Concepts | Silberschatz  | 770.00 | 1960-11-20       |
+|      1 |       102 |   2 | BCA   | Ann Mariya |   21 | 2025-02-12  | 2025-02-18  | 0.00 | Database Systems          | Ramez Elmasri | 550.00 | 1976-10-10       |
+|      7 |       105 |   2 | BCA   | riya       |   26 | 2025-01-05  | NULL        | 0.00 | java                      | febin         | 250.00 | 2015-08-11       |
+|      7 |       104 |   1 | MCA   | ram        |   25 | 2025-01-15  | NULL        | 0.00 | java                      | febin         | 250.00 | 2015-08-11       |
+|      6 |       109 |   4 | BBA   | devika     |   28 | 2025-01-20  | NULL        | 0.00 | networking                | vidhu         | 200.00 | 2012-11-05       |
+|      6 |       110 |   5 | MCOM  | sana       |   33 | 2025-01-28  | NULL        | 0.00 | networking                | vidhu         | 200.00 | 2012-11-05       |
++--------+-----------+-----+-------+------------+------+-------------+-------------+------+---------------------------+---------------+--------+------------------+
+11 rows in set (0.00 sec)
+
+select  studentid, name from library group by studentid  having count(bookid)>2;
++-----------+----------+
+| studentid | name     |
++-----------+----------+
+|       101 | Midhun K |
++-----------+----------+
+
+
