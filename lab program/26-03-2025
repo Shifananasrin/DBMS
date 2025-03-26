@@ -1,2 +1,18 @@
 view
 create view  studentviews as(select studentid ,name from students);
+select * from studentviews1;
++-----------+------------+
+| studentid | name       |
++-----------+------------+
+|       101 | Midhun K   |
+|       102 | Ann Mariya |
+|       103 | Sidharth M |
+|       104 | ram        |
+|       105 | riya       |
+|       106 | Aysha      |
+|       107 | Shana      |
+|       108 | Anaswara   |
+|       109 | devika     |
+|       110 | sana       |
++-----------+------------+
+10 rows in set (0.00 sec)
