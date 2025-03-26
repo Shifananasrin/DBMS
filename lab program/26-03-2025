@@ -16,3 +16,6 @@ select * from studentviews1;
 |       110 | sana       |
 +-----------+------------+
 10 rows in set (0.00 sec)
+
+select * from departments join students on departments.dno=students.dno  join bookissues on students.studentid=bookissues.studentid  join books on bookissues.bookid=bookissues.bookid;
+
