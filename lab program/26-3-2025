@@ -1,0 +1,2 @@
+view
+create view  studentviews as(select studentid ,name from students);
