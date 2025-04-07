@@ -1,6 +1,17 @@
+
 1.create table books(accno int auto_increment primary key,title varchar(100) unique not NULL,
 author varchar(50) not NULL,Price float(4,2),type enum('lending','reference'),availability enum('y
 es', 'no'),publisherid int);
 
 2.create table publishers(publisherid int auto_increment primary key, name
 varchar(50) unique not null, address varchar(100));
+
+3.create table member(memberid int auto_increment primary key,name varchar(50) not null,address varchar(100),type enum('staff','student'));
+
+4.create table issues(issueid int auto_increment primary key,memberid int,accno int,issuesdate date,duedate date);
+Query OK, 0 rows affected (0.02 sec)
+
+5.create table returns(returnid int auto_increment primary key,memberid int ,accno int,fine int default 0 CHECK (fine >= 0));
+
+
+foreign key
