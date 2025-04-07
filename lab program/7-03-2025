@@ -14,6 +14,58 @@ Query OK, 0 rows affected (0.02 sec)
 5.create table returns(returnid int auto_increment primary key,memberid int ,accno int,fine int default 0 CHECK (fine >= 0));
 
 
-foreign key
-book and publisher
+*foreign key
+1.book and publisher
 alter table books add constraint books_fkey_publisherid foreign key(publisherid) references publishers(publisherid);
+
+2.issues and member and book
+alter table issues add constraint issues_fkey_memberid foreign key(memberid) references members(memberid)
+alter table  issues add constraint issues_fkey_accno foreign key(accno) references books(accno)
+
+3.return and member and books
+alter table return add constraint return_fkey_memberid foreign key(memberid) references members(memberid)
+alter table  returns add constraint return_fkey_accno foreign key(accno) references books(accno)
+
+*insert  values
+1.books
+insert  into books (title, author, price, type, availability, publisherid) VALUES
+('Database Systems', 'C.J. Date', 45.50, 'lending', 'yes', 1),
+('Operating Systems', 'Andrew Tanenbaum', 60.00, 'reference', 'yes', 2),
+('Computer Networks', 'James Kurose', 59.99, 'lending', 'no', 3),
+('Data Structures', 'Mark Weiss', 35.75, 'lending', 'yes', 4),
+('Software Engineering', 'Ian Sommerville', 50.00, 'reference', 'no', 5);
+
+2.publishers
+insert into publishers (name, address) VALUES
+('Penguin Books', '11 Strand, London'),
+('HarperCollins', '195 Broadway, New York'),
+('Oxford Press', 'Great Clarendon Street, Oxford'),
+('Scholastic', '557 Broadway, New York'),
+('Random House', '1745 Broadway, New York');
+
+3.members
+insert into members (name, address, type) VALUES
+('Alice Smith', '123 Main St', 'student'),
+('Bob Johnson', '456 Maple Ave', 'staff'),
+('Carol White', '789 Elm St', 'student'),
+('David Brown', '321 Oak Dr', 'staff'),
+('Eve Davis', '654 Pine Ln', 'student');
+
+4.issues 
+insert into issues (memberid, accno, issuedate, duedate) VALUES
+(1, 1, '2025-04-01', '2025-04-15'),
+(2, 3, '2025-04-02', '2025-04-16'),
+(3, 4, '2025-04-03', '2025-04-17'),
+(4, 2, '2025-04-04', '2025-04-18'),
+(5, 5, '2025-04-05', '2025-04-19');
+
+5.return  
+insert into returns (memberid, accno, returndate, fine) VALUES
+(1, 1, '2025-04-10', 0),
+(2, 3, '2025-04-17', 5),
+(3, 4, '2025-04-16', 0),
+(4, 2, '2025-04-18', 0),
+(5, 5, '2025-04-20', 10);
+
+
+
