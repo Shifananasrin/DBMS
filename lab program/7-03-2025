@@ -15,3 +15,5 @@ Query OK, 0 rows affected (0.02 sec)
 
 
 foreign key
+book and publisher
+alter table books add constraint books_fkey_publisherid foreign key(publisherid) references publishers(publisherid);
