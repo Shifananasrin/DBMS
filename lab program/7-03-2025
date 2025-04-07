@@ -1,0 +1,4 @@
+1.create table books(accno int auto_increment primary key,title varchar(100) unique not NULL,
+author varchar(50) not NULL,Price float(4,2),type enum('lending','reference'),availability enum('y
+es', 'no'),publisherid int);
+2
