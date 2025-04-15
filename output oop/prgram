@@ -1,0 +1,118 @@
+1.product
+Enter the number of products: 2
+ENTER THE DETAILS OF PRODUCT 1
+Enter Product Code: car123
+Enter Product Name: benz
+Enter Product Price: 100000
+Displaying Product 1:
+Product Code: car123
+Product Name: benz
+Product Price: 100000
+
+ENTER THE DETAILS OF PRODUCT 2
+Enter Product Code: car124
+Enter Product Name: jaguar
+Enter Product Price: 250000
+Displaying Product 2:
+Product Code: car124
+Product Name: jaguar
+Product Price: 250000
+
+
+Displaying Product with Lowest Price  :
+Product Code: car123
+Product Name: benz
+Product Price: 100000
+
+------------------------------------------------------------------
+2.matrix Addition
+enter number of row in matrix A:2
+enter number of columns in matrix A:2
+enter number of row in matrix B:2
+enter number of columns in matrix B:2
+enter the element of matrix A:
+1 2 3 4
+enter the element of matrix B:
+5 6 7 8
+Matrix A:
+1  2  
+3  4  
+Matrix B:
+5  6  
+7  8  
+The sum of matrix
+6  8  
+10  12  
+---------------------------------------------------------------------
+3.complex number
+enter the real part of first complex number
+23
+enter the imaginary part of first complex number
+34
+enter the real part of second complex number
+21
+enter the imaginary part of second complex number
+42
+sume is44.0+76.0i
+-----------------------------------------------------------------------
+4.matrix symmetry
+enter the number of rows:
+2
+enter the number of columns:
+2
+enter the elements of the matrix:
+1 2 2 1
+the given matrix:
+1	2	
+2	1	
+the given matrix is symmetric
+------------------------------------------------------------------------
+5.Cpu details
+Enter processor cache: 
+4.3
+Enter RAM Clock speed: 
+5.5
+Processor Cache = 4.3
+RAM Clock speed= 5.5
+-------------------------------------------------------------------------
+6.sort strings
+enter the number of string to sort:
+3
+enter the string:
+flower
+fruit
+drinks
+choose 1 or 2 from the menu below
+1.In-built sort
+2.User-defined sort
+1
+[drinks, flower, fruit]
+----------------------------------------------------------------------------
+7.search a element
+enter the number of elements:
+5
+enter those 5 element
+2 7 5 1 4
+enter the value you want to find:
+5
+5is present in the location:3
+------------------------------------------------------------------------
+8.String manipulation
+ROSE	Length of ROSE is 4
+ABCDEF	ROSEABCDEF	ROSEABCDEF	3rd char of ROSEABCDEFis:S
+extracted chars:ROSEABCDEF SEA
+32	0	false	true	RockStar starts with 'Ro':true
+RockStar end with 'Star':true
+RockStar Contain 'tar':true
+Index of 't' in RockStar:5
+Index of 'star' in RockStar:4
+all caps - RockStar:ROCKSTAR
+all small - RockStar:rockstar
+Replace Star with etRocket
+Double value of dVal is3.456
+Integer value of iVal is6
+9.456
+--------------------------------------------------------------------------
+9.employeee
+
+
